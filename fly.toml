@@ -1,0 +1,22 @@
+# fly.toml — Evoluteon (Next.js)
+# Docs: https://fly.io/docs/reference/configuration/
+# NOTE: `app` must be globally unique on Fly. If "evoluteon" is taken,
+# change it here (or run: fly launch --name <your-unique-name>).
+
+app = "evoluteon"
+primary_region = "mad"   # Madrid — closest Fly region to Lisbon
+
+[build]
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[vm]]
+  memory = "512mb"
+  cpu_kind = "shared"
+  cpus = 1
