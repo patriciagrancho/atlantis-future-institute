@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ArrowRight, Lightbulb, Target, TrendingUp, Users2, Briefcase, Shield, ChevronRight, MapPin, Zap, X, BookOpen } from 'lucide-react';
+import { ArrowRight, Lightbulb, Target, TrendingUp, Users2, Briefcase, Shield, ChevronRight, MapPin, Zap, X, BookOpen, AlertCircle, Globe, Gauge, Eye, Lock, TrendingDown } from 'lucide-react';
 
 export default function AtlantisFuture() {
   const [showResearchHub, setShowResearchHub] = useState(false);
@@ -18,6 +18,7 @@ export default function AtlantisFuture() {
           <div className="flex gap-12 items-center text-sm font-medium">
             <a href="#about" className="text-stone-600 hover:text-stone-900 transition">About</a>
             <a href="#initiatives" className="text-stone-600 hover:text-stone-900 transition">Initiatives</a>
+            <a href="#gdp" className="text-stone-600 hover:text-stone-900 transition">Beyond GDP</a>
             <a href="#impact" className="text-stone-600 hover:text-stone-900 transition">Impact</a>
             <a href="#connect" className="text-stone-600 hover:text-stone-900 transition">Connect</a>
             <button className="px-6 py-2.5 bg-stone-900 text-white rounded-lg text-xs font-semibold hover:bg-stone-800 transition">
@@ -193,6 +194,233 @@ export default function AtlantisFuture() {
         </div>
       </section>
 
+      {/* BEYOND GDP SECTION */}
+      <section id="gdp" className="py-32 px-8 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-20">
+            <p className="text-xs font-semibold text-stone-500 tracking-widest uppercase mb-4">Progress Measurement</p>
+            <h2 className="text-4xl font-bold text-stone-900 mb-6">
+              Beyond GDP: Redefining Progress
+            </h2>
+            <p className="text-lg text-stone-600 max-w-3xl mx-auto">
+              Global economies have relied on GDP as the primary progress metric for decades. But GDP masks the true cost of development. We're part of a movement redefining how nations measure what truly matters.
+            </p>
+          </div>
+
+          {/* GDP's Core Flaws */}
+          <div className="mb-20">
+            <h3 className="text-2xl font-bold text-stone-900 mb-12 text-center">Why GDP Fails</h3>
+            <div className="grid grid-cols-2 gap-8">
+              {[
+                {
+                  icon: Eye,
+                  title: "Overlooks Critical Value",
+                  items: ["Volunteer work", "Child care", "Informal economy"]
+                },
+                {
+                  icon: AlertCircle,
+                  title: "Ignores Negative Impacts",
+                  items: ["Emissions & pollution", "Health costs", "Income inequality"]
+                },
+                {
+                  icon: Gauge,
+                  title: "Short-Term Bias",
+                  items: ["Immediate flows only", "Ignores asset degradation", "Risks future generations"]
+                },
+                {
+                  icon: TrendingDown,
+                  title: "Misses Quality of Life",
+                  items: ["Rising GDP + declining wellbeing", "Social decay masked", "Poor mental health ignored"]
+                }
+              ].map((flaw, i) => {
+                const Icon = flaw.icon;
+                return (
+                  <div key={i} className="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-8 border border-red-100">
+                    <div className="flex items-start gap-4">
+                      <Icon className="w-8 h-8 text-red-600 flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-stone-900 mb-3">{flaw.title}</h4>
+                        <ul className="space-y-2">
+                          {flaw.items.map((item, j) => (
+                            <li key={j} className="text-sm text-stone-600 flex gap-2">
+                              <span className="text-red-600 font-bold">•</span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Global Alternatives */}
+          <div className="mb-20">
+            <h3 className="text-2xl font-bold text-stone-900 mb-12 text-center">Global Alternatives in Motion</h3>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {[
+                {
+                  title: "Inclusive Wealth Index (IWI)",
+                  focus: "Natural, human, and produced capital (adjusted for carbon)",
+                  region: "Global"
+                },
+                {
+                  title: "Human Development Index (HDI)",
+                  focus: "Health, education, living standards",
+                  region: "Global"
+                },
+                {
+                  title: "Gross Inclusive Income (GII)",
+                  focus: "Natural asset depreciation tracking",
+                  region: "UK (2022, reports 2025)"
+                },
+                {
+                  title: "National Wellbeing Strategy",
+                  focus: "Integrated wellbeing and prosperity metrics",
+                  region: "UAE, Australia, EU"
+                }
+              ].map((alt, i) => (
+                <div key={i} className="bg-blue-50 rounded-xl p-8 border border-blue-100">
+                  <h4 className="font-semibold text-stone-900 mb-2">{alt.title}</h4>
+                  <p className="text-sm text-stone-600 mb-4">{alt.focus}</p>
+                  <span className="inline-block px-3 py-1 bg-blue-100 text-blue-900 rounded-full text-xs font-semibold">{alt.region}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Barriers to Change */}
+          <div className="mb-20">
+            <h3 className="text-2xl font-bold text-stone-900 mb-12 text-center">4 Core Barriers Slowing Transition</h3>
+            <div className="grid grid-cols-4 gap-6">
+              {[
+                {
+                  num: "1",
+                  title: "Growth Divide",
+                  desc: "Developed nations push wellbeing; developing nations need GDP growth for poverty alleviation"
+                },
+                {
+                  num: "2",
+                  title: "No Clear Path",
+                  desc: "Disagreement on whether to replace, supplement, or integrate GDP into new frameworks"
+                },
+                {
+                  num: "3",
+                  title: "Definition Gap",
+                  desc: "Wellbeing lacks universal definition, making cross-country comparisons extremely difficult"
+                },
+                {
+                  num: "4",
+                  title: "System Lock-In",
+                  desc: "IMF, World Bank, WTO structured around GDP. 'GDP growth' searched 32x more than alternatives"
+                }
+              ].map((barrier, i) => (
+                <div key={i} className="bg-gradient-to-b from-yellow-50 to-amber-50 rounded-xl p-6 border border-yellow-100">
+                  <div className="w-10 h-10 rounded-lg bg-yellow-600 text-white flex items-center justify-center font-bold mb-4">
+                    {barrier.num}
+                  </div>
+                  <h4 className="font-semibold text-stone-900 mb-2">{barrier.title}</h4>
+                  <p className="text-sm text-stone-600">{barrier.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Future Scenarios */}
+          <div className="mb-20">
+            <h3 className="text-2xl font-bold text-stone-900 mb-12 text-center">Global Transition Scenarios (2044 Target)</h3>
+            <div className="grid grid-cols-2 gap-8">
+              {[
+                {
+                  title: "🌟 Unified Transition",
+                  subtitle: "The Preferable Future",
+                  desc: "Global consensus. IMF, World Bank, WTO shift from GDP to holistic progress metrics.",
+                  outcome: "Reduced inequality, ecosystem preservation, updated education",
+                  color: "green"
+                },
+                {
+                  title: "🔄 Evolving Transition",
+                  subtitle: "Delayed Progress",
+                  desc: "Nations agree conceptually but financial infrastructure remains GDP-centric.",
+                  outcome: "Progress stalls, mimicking UN SDG implementation delays",
+                  color: "blue"
+                },
+                {
+                  title: "⏸️ Stagnant Transition",
+                  subtitle: "The Baseline (Today)",
+                  desc: "Global momentum halts. GDP-centrism dominates despite minor definitional updates.",
+                  outcome: "Status quo persists; systemic barriers prevent meaningful change",
+                  color: "gray"
+                },
+                {
+                  title: "⚡ Polarized Transition",
+                  subtitle: "Fragmented & Forced",
+                  desc: "Stringent sustainability conditions forced onto trade and aid. Geopolitical friction.",
+                  outcome: "Economic barriers, division between GDP and progress-focused blocs",
+                  color: "red"
+                }
+              ].map((scenario, i) => {
+                const colorMap = {
+                  green: "border-green-200 bg-green-50",
+                  blue: "border-blue-200 bg-blue-50",
+                  gray: "border-stone-200 bg-stone-50",
+                  red: "border-red-200 bg-red-50"
+                };
+                return (
+                  <div key={i} className={`${colorMap[scenario.color]} rounded-xl p-8 border-2`}>
+                    <h4 className="text-lg font-bold text-stone-900 mb-1">{scenario.title}</h4>
+                    <p className="text-xs font-semibold text-stone-500 uppercase tracking-widest mb-3">{scenario.subtitle}</p>
+                    <p className="text-sm text-stone-700 mb-4">{scenario.desc}</p>
+                    <div className="pt-4 border-t border-current/20">
+                      <p className="text-xs font-semibold text-stone-600 uppercase tracking-widest mb-2">Outcome</p>
+                      <p className="text-sm text-stone-600">{scenario.outcome}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* 4 Global Recommendations */}
+          <div className="bg-stone-900 text-white rounded-2xl p-12">
+            <h3 className="text-2xl font-bold mb-12 text-center">Pathways to Unified Transition</h3>
+            <div className="grid grid-cols-2 gap-8">
+              {[
+                {
+                  num: "1",
+                  title: "Define Progress Globally",
+                  desc: "Assemble inclusive, geographically diverse group to build singular definition balancing economy, people, planet"
+                },
+                {
+                  num: "2",
+                  title: "Establish Common Principles",
+                  desc: "Subject new definition to civic consultations. Build trust and provide clear implementation guidelines"
+                },
+                {
+                  num: "3",
+                  title: "Create Global Working Group",
+                  desc: "Multi-disciplinary researchers & statisticians co-design standard dashboard resolving GDP's tradeoff challenges"
+                },
+                {
+                  num: "4",
+                  title: "Launch Pilot Locations",
+                  desc: "Select global trial sites. Test, refine, prove adaptability before scaling to all nations"
+                }
+              ].map((rec, i) => (
+                <div key={i} className="bg-white/10 backdrop-blur-sm rounded-lg p-8 border border-white/20">
+                  <div className="w-10 h-10 rounded-lg bg-white/20 text-white flex items-center justify-center font-bold mb-4">
+                    {rec.num}
+                  </div>
+                  <h4 className="font-semibold text-white mb-2">{rec.title}</h4>
+                  <p className="text-stone-200 text-sm">{rec.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Impact Section */}
       <section id="impact" className="py-32 px-8 bg-gradient-to-b from-stone-900 to-stone-800 text-white">
