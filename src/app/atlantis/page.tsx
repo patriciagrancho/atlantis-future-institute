@@ -258,34 +258,74 @@ export default function AtlantisFuture() {
 
           {/* Global Alternatives */}
           <div className="mb-20">
-            <h3 className="text-2xl font-bold text-stone-900 mb-12 text-center">Global Alternatives in Motion</h3>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <h3 className="text-2xl font-bold text-stone-900 mb-3 text-center">&apos;Beyond GDP&apos; Today</h3>
+            <p className="text-stone-600 text-center max-w-2xl mx-auto mb-12">Global frameworks already attempt to map well-being and sustainable assets &mdash; but each has limits.</p>
+
+            {/* Global Indices */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
               {[
                 {
-                  title: "Inclusive Wealth Index (IWI)",
-                  focus: "Natural, human, and produced capital (adjusted for carbon)",
-                  region: "Global"
+                  title: "Inclusive Wealth Index",
+                  abbr: "IWI",
+                  focus: "Natural, human & produced capital, adjusted for carbon damage"
                 },
                 {
-                  title: "Human Development Index (HDI)",
-                  focus: "Health, education, living standards",
-                  region: "Global"
+                  title: "Human Development Index",
+                  abbr: "HDI",
+                  focus: "Health, education & living standards"
                 },
                 {
-                  title: "Gross Inclusive Income (GII)",
-                  focus: "Natural asset depreciation tracking",
-                  region: "UK (2022, reports 2025)"
-                },
-                {
-                  title: "National Wellbeing Strategy",
-                  focus: "Integrated wellbeing and prosperity metrics",
-                  region: "UAE, Australia, EU"
+                  title: "World Happiness Report",
+                  abbr: "WHR",
+                  focus: "Subjective life-evaluation surveys"
                 }
               ].map((alt, i) => (
                 <div key={i} className="bg-blue-50 rounded-xl p-8 border border-blue-100">
+                  <span className="inline-block px-3 py-1 bg-blue-600 text-white rounded-full text-xs font-bold mb-4">{alt.abbr}</span>
                   <h4 className="font-semibold text-stone-900 mb-2">{alt.title}</h4>
-                  <p className="text-sm text-stone-600 mb-4">{alt.focus}</p>
-                  <span className="inline-block px-3 py-1 bg-blue-100 text-blue-900 rounded-full text-xs font-semibold">{alt.region}</span>
+                  <p className="text-sm text-stone-600">{alt.focus}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* The Gaps */}
+            <div className="bg-amber-50 rounded-xl p-8 border border-amber-200">
+              <div className="flex items-center gap-3 mb-5">
+                <AlertCircle className="w-6 h-6 text-amber-600" />
+                <h4 className="font-bold text-stone-900">The Gaps in Today&apos;s Alternatives</h4>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  "Inconsistency across metrics",
+                  "Subjectivity in weighting",
+                  "Reliance on reductive indicators",
+                  "Missing data → extrapolated values"
+                ].map((gap, i) => (
+                  <div key={i} className="flex gap-2 text-sm text-stone-700">
+                    <span className="text-amber-600 font-bold">&times;</span>
+                    {gap}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Country-Level Progress */}
+          <div className="mb-20">
+            <h3 className="text-2xl font-bold text-stone-900 mb-3 text-center">Countries Already Experimenting</h3>
+            <p className="text-stone-600 text-center max-w-2xl mx-auto mb-12">Nations are piloting complementary dashboards alongside GDP.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { flag: "🇦🇪", country: "UAE", desc: "National Wellbeing Council & National Wellbeing Strategy 2031" },
+                { flag: "🇦🇺", country: "Australia", desc: "&apos;Measuring What Matters&apos; — first national well-being framework (2022)" },
+                { flag: "🇬🇧", country: "United Kingdom", desc: "Gross & Net Inclusive Income (GII/NII) tracking natural-asset depreciation — first reports 2025" },
+                { flag: "🇺🇸", country: "United States", desc: "Environmental-economic statistics for natural capital — trials through 2036" },
+                { flag: "🇪🇺", country: "European Union", desc: "&apos;Beyond Growth&apos; conference (2023); EESC urges doughnut-economics dashboards by 2030" }
+              ].map((c, i) => (
+                <div key={i} className="bg-green-50 rounded-xl p-6 border border-green-100">
+                  <div className="text-3xl mb-3">{c.flag}</div>
+                  <h4 className="font-semibold text-stone-900 mb-2">{c.country}</h4>
+                  <p className="text-sm text-stone-600" dangerouslySetInnerHTML={{ __html: c.desc }} />
                 </div>
               ))}
             </div>
@@ -330,7 +370,25 @@ export default function AtlantisFuture() {
 
           {/* Future Scenarios */}
           <div className="mb-20">
-            <h3 className="text-2xl font-bold text-stone-900 mb-12 text-center">Global Transition Scenarios (2044 Target)</h3>
+            <h3 className="text-2xl font-bold text-stone-900 mb-3 text-center">The Global Transition: Four Scenarios</h3>
+            <p className="text-stone-600 text-center max-w-2xl mx-auto mb-10">
+              Backcasting from a target year of <span className="font-semibold text-stone-900">2044</span> &mdash; the 100th anniversary of Bretton Woods &mdash; when progress could be universally measured by financial, human &amp; natural assets.
+            </p>
+
+            {/* Two Uncertainties */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-3xl mx-auto">
+              <div className="bg-stone-50 rounded-xl p-6 border border-stone-200 text-center">
+                <p className="text-xs font-semibold text-stone-500 uppercase tracking-widest mb-2">Uncertainty 1</p>
+                <p className="font-semibold text-stone-900 mb-1">Cooperation</p>
+                <p className="text-sm text-stone-600">Unified &harr; Fragmented</p>
+              </div>
+              <div className="bg-stone-50 rounded-xl p-6 border border-stone-200 text-center">
+                <p className="text-xs font-semibold text-stone-500 uppercase tracking-widest mb-2">Uncertainty 2</p>
+                <p className="font-semibold text-stone-900 mb-1">Economic Participation</p>
+                <p className="text-sm text-stone-600">GDP-centric &harr; Progress-centric</p>
+              </div>
+            </div>
+
             <div className="grid grid-cols-2 gap-8">
               {[
                 {
