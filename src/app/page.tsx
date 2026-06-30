@@ -17,6 +17,7 @@ export default function AtlantisFuture() {
           </div>
           <div className="flex gap-12 items-center text-sm font-medium">
             <a href="#about" className="text-stone-600 hover:text-stone-900 transition">About</a>
+            <a href="#approach" className="text-stone-600 hover:text-stone-900 transition">Future Building</a>
             <a href="#initiatives" className="text-stone-600 hover:text-stone-900 transition">Initiatives</a>
             <a href="#gdp" className="text-stone-600 hover:text-stone-900 transition">Beyond GDP</a>
             <a href="#impact" className="text-stone-600 hover:text-stone-900 transition">Impact</a>
@@ -128,6 +129,71 @@ export default function AtlantisFuture() {
                 <p className="text-stone-500 font-medium">Global Planetary Health Vision</p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FUTURE BUILDING SECTION */}
+      <section id="approach" className="py-32 px-8 bg-gradient-to-b from-white to-stone-50">
+        <div className="max-w-5xl mx-auto">
+          {/* Manifesto */}
+          <div className="text-center mb-20">
+            <p className="text-xs font-semibold text-stone-500 tracking-widest uppercase mb-6">Our Approach</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-stone-900 mb-8 leading-tight">
+              Foresight today ends at strategy.
+              <br />
+              <span className="text-stone-400">We continue into execution.</span>
+            </h2>
+            <p className="text-lg text-stone-600 max-w-3xl mx-auto leading-relaxed">
+              Strategic foresight has become effective at exploring possible futures. What remains underdeveloped is the infrastructure that turns <span className="text-stone-900 font-semibold">preferred futures into coordinated action at scale</span>.
+            </p>
+          </div>
+
+          {/* Imagine vs Build */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20">
+            <div className="rounded-2xl p-10 border border-stone-200 bg-white">
+              <p className="text-xs font-semibold text-stone-400 tracking-widest uppercase mb-4">Most foresight organizations</p>
+              <p className="text-2xl font-semibold text-stone-500 leading-snug">Help people <span className="italic">imagine</span> better futures.</p>
+            </div>
+            <div className="rounded-2xl p-10 border-2 border-stone-900 bg-stone-900 text-white">
+              <p className="text-xs font-semibold text-stone-400 tracking-widest uppercase mb-4">We help societies</p>
+              <p className="text-2xl font-semibold leading-snug">Actually <span className="italic">build</span> them.</p>
+              <p className="text-stone-300 text-sm mt-4 leading-relaxed">
+                We design systems that help governments, organizations and citizens collectively build preferred futures &mdash; starting today.
+              </p>
+            </div>
+          </div>
+
+          {/* Future Thinking vs Future Building */}
+          <div className="text-center mb-12">
+            <h3 className="text-2xl font-bold text-stone-900 mb-3">Future Thinking &rarr; Future Building</h3>
+            <p className="text-stone-600 max-w-2xl mx-auto">We didn&apos;t set out to do foresight better. We created the next layer: the infrastructure to build preferred futures.</p>
+          </div>
+
+          <div className="rounded-2xl border border-stone-200 overflow-hidden bg-white">
+            {/* Header row */}
+            <div className="grid grid-cols-2 bg-stone-100">
+              <div className="p-5 text-center border-r border-stone-200">
+                <p className="text-xs font-semibold text-stone-400 tracking-widest uppercase mb-1">Future Thinking</p>
+                <p className="font-bold text-stone-700">Dubai Future Foundation</p>
+              </div>
+              <div className="p-5 text-center bg-stone-900">
+                <p className="text-xs font-semibold text-stone-400 tracking-widest uppercase mb-1">Future Building</p>
+                <p className="font-bold text-white">Atlantis Future Institute</p>
+              </div>
+            </div>
+            {/* Comparison rows */}
+            {[
+              ["Explores future technologies", "Builds future systems"],
+              ["Runs foresight programs", "Turns foresight into execution"],
+              ["Inspires innovation", "Coordinates implementation"],
+              ["Produces visions", "Measures progress toward visions"],
+            ].map(([left, right], i) => (
+              <div key={i} className={`grid grid-cols-2 ${i % 2 === 1 ? "bg-stone-50" : "bg-white"}`}>
+                <div className="p-5 text-center text-stone-500 border-r border-stone-200 text-sm md:text-base">{left}</div>
+                <div className="p-5 text-center text-stone-900 font-medium text-sm md:text-base">{right}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
